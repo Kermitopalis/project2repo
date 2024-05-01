@@ -1,5 +1,8 @@
 [
-    {"tag": "Goblin Shark", "correct": false, "feedback": "Try again!"},
-    {"tag": "Tiger Shark", "correct": true, "feedback": "Correct answer!"},
-    {"tag": "East Blue Shark", "correct": false, "feedback": "Not quite right."}
+    {"tag": "Goblin Shark", "correct": false, "feedback": "No, the Goblin Shark has a shovel-like snout, flabby body, and a tail with a weakly developed lower lobe. One of the distinctive features of the Goblin Shark is its protrusible mouth. The mouth can retract to a position under the eye, or extend forward under the snout."},
+    {"tag": "Tiger Shark", "correct": true, "feedback": "Excellent! Tiger Sharks are relatively large and are known for their distinctive stripes and spots"},
+    {"tag": "East Blue Shark", "correct": false, "feedback": "The East Blue is the ocean which makes up the east part of the Blue Sea split by the Red Line and the Grand Line. It is separated from the North Blue by the Red Line and the South Blue by the Paradise half of the Grand Line."},
+    {"tag": "Basking Shark", "correct": false, "feedback": "That's close but the basking shark is the second-largest living shark and fish, after the whale shark. It is one of three plankton-eating shark species, along with the whale shark and megamouth shark."},
+    {"tag": "Shortfin Mako Shark", "correct": false, "feedback": "Nope, The shortfin mako shark, also known as the shortfin mako, blue pointer, or bonito shark, is a large mackerel shark."}
+
   ]
