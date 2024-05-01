@@ -1,0 +1,5 @@
+[
+    {"tag": "Goblin Shark", "correct": false, "feedback": "Try again!"},
+    {"tag": "Tiger Shark", "correct": true, "feedback": "Correct answer!"},
+    {"tag": "East Blue Shark", "correct": false, "feedback": "Not quite right."}
+  ]

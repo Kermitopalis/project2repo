@@ -1,0 +1,37 @@
+[
+    {
+      "tag": "Good form",
+      "correct": true,
+      "feedback": "Correct - Good Form: The shape of the vase clearly demonstrates craftsmanship."
+    },
+    {
+      "tag": "Poor taste",
+      "correct": false,
+      "feedback": "Incorrect - Poor Taste: Taste is in the eye of the designer as well as the viewer."
+    },
+    {
+      "tag": "Contrasting themes",
+      "correct": false,
+      "feedback": "Incorrect - Contrasting Themes: There is uniformity in the shape, but there is no depth to this media to imply that it is contrasting with other figures."
+    },
+    {
+      "tag": "AI",
+      "correct": true,
+      "feedback": "Correct - AI: While a modification of prior work, this is still AI generative work."
+    },
+    {
+      "tag": "Shading",
+      "correct": false,
+      "feedback": "Incorrect - Shading: While there is a light source and a shadow cast, shading is a term used for pencil based sketching."
+    },
+    {
+      "tag": "Original work",
+      "correct": false,
+      "feedback": "Incorrect - Original Work: Artwork created from generative AI can not be original since it is trained on other artists' work."
+    },
+    {
+      "tag": "Accessible",
+      "correct": false,
+      "feedback": "Incorrect - Accessible: The color scheme while high contrast in some areas, loses form in others and has written text unrelated to the character."
+    }
+  ]
