@@ -71,7 +71,7 @@ export class TagQuiz extends LitElement {
             display: flex;
         }
 
-        .title, .question {
+        .question {
             min-height: var(--ddd-spacing-8);
             min-width: var(--ddd-spacing-16);
             font-family: "Montserrat", sans-serif;
@@ -80,21 +80,24 @@ export class TagQuiz extends LitElement {
             flex-direction: column;
             box-sizing: border-box;
             padding: var(--ddd-spacing-4);
-            color: var(--ddd-theme-default-navy80);
+            color: var(--ddd-theme-default-slateMaxLight);
 
         }
 
         .title {
-            background: var(--ddd-theme-default-beaverBlue);
-            color: var(--ddd-theme-default-shrineLight);
-            margin: var(--ddd-spacing-4) 0; 
+            background-color: var(--ddd-theme-default-slateMaxLight);
+            color: var(--ddd-theme-default-navy80);
+            margin: var(--ddd-spacing-2) 0; 
+            font-family: "Montserrat", sans-serif, 600;
+            padding: var(--ddd-spacing-4);
         }
 
         .paragraph {
             background: var(--ddd-theme-default-slateMaxLight);
             font-size: 2.5vw;
             color: var(--ddd-theme-default-navy80);
-            margin: var(--ddd-spacing-4) 0; 
+            margin-bottom: 5vh;
+            padding: 3vw;
         }
 
         .quiz-options {
@@ -119,7 +122,7 @@ export class TagQuiz extends LitElement {
 
         .quiz-container {
             color: black;
-            background-color: var(--ddd-theme-default-slateMaxLight);
+            background-color: var(--ddd-theme-default-slateGray);
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -149,6 +152,9 @@ export class TagQuiz extends LitElement {
 
         .answer-option:hover, #button:hover, .button:hover {
             border: solid 3px var(--ddd-theme-default-navy80);
+        }
+        .answer-container {
+            background-color: var(--ddd-theme-default-slateMaxLight);
         }
 
         .answerbox {
@@ -189,14 +195,15 @@ export class TagQuiz extends LitElement {
         }
 
         .feedback {
-            display: flex;
+            display: grid;
             padding: 2vw;
             color: grey;
             align-content: center;
             text-align: center;
-            background: var(--ddd-theme-default-slateMaxLight);
+            background: var(---ddd-theme-default-navy80);
             font-family: "Kalam", cursive;
             overflow: scroll;
+
         }
     `;
     }
@@ -292,6 +299,7 @@ export class TagQuiz extends LitElement {
         this.shuffleOptions(this.answerOptions); //initializes the shuffle 
         this.correctness = {}; //resets
         this.feedback = {};
+        answerBox.innerText = 'drag into here';
     }
     // buttonoff() { 
     //     const answerBox = this.shadowRoot.querySelector('.answerbox .text');
@@ -370,6 +378,7 @@ export class TagQuiz extends LitElement {
                     <img class="img" src="${this.imageURL}">
                 </div>
                 <div class="question">${this.question}</div>
+                <div class="answer-container">
                 <div class="quiz-options">
                 ${this.shuffledOptions.map(option => html`
                         <div class="answer-option" tabindex="0" 
@@ -390,12 +399,13 @@ export class TagQuiz extends LitElement {
                 <button class="button" @click="${this.resetQuiz}">Reset</button>
                 <div class="feedback-container">
                     ${Object.entries(this.correctness).map(([option, correct]) => html`
-                        <div class="feedback" style="color: ${correct ? 'green' : 'red'}">
+                        <div class="feedback" style="color: ${correct ? '#4f9245' : '#ce5555'}">
                             ${option}
                             :
                             ${this.answerOptions.find(item => item.tag === option)?.feedback || ''}
                         </div>
                     `)}
+                    </div>
                 </div>
                 </confetti-container>
             </div>
