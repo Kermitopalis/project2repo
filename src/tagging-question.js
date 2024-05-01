@@ -79,7 +79,7 @@ export class TagQuiz extends LitElement {
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            padding: var(--ddd-spacing-2);
+            padding: var(--ddd-spacing-4);
             color: var(--ddd-theme-default-navy80);
 
         }
@@ -106,10 +106,15 @@ export class TagQuiz extends LitElement {
 
         .img {
             display: block;
-            margin: 0 auto;
+            margin: auto;
             text-align: center;
             height: 50vw;
             border: solid 1vw var(--ddd-theme-default-slateLight);
+        }
+        .img:hover, .answer-option:hover, .answerbox:hover, #button:hover, .button:hover {
+            scale: 105%;
+            border: solid 1vw var(--ddd-theme-default-navy80);
+            transition: 0.3s ease;
         }
 
         .quiz-container {
@@ -124,7 +129,6 @@ export class TagQuiz extends LitElement {
 
         .answer-option, .answerbox, #button, .button {
             font-family: "Kalam", cursive;
-            transition: border-color 0.3s ease;
         }
         .answer-option, #button, .button, .paragraph {
             font-family: "Montserrat", sans-serif;
@@ -170,6 +174,12 @@ export class TagQuiz extends LitElement {
             color: var(--ddd-theme-default-navy80);
             margin: 2vh 0vh 3.5vh 0vh;
             box-shadow: var(--ddd-theme-default-slateLight) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset, 0px 20px 0px var(--ddd-theme-default-slateLight);
+        }
+        #button:disabled { 
+            color: var(--ddd-theme-default-slateLight);
+            box-shadow: var(--ddd-theme-default-slateLight) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset, 0px 20px 0px var(--ddd-theme-default-slateLight);            
+            top: none !important;
+            transition: none;
         }
 
         #button:active, .button:active {
@@ -376,7 +386,7 @@ export class TagQuiz extends LitElement {
                 <div class="answerbox" @drop="${this.handleDrop}" @dragover="${this.handleDragOver}">
                     <p>drag into here</p>
                 </div>
-                <button id="button" @click="${this.checkAnswer}">Check Answer</button>
+                <button id="button" ?disabled="${this.answerChecked}" @click="${this.checkAnswer}">Check Answer</button>
                 <button class="button" @click="${this.resetQuiz}">Reset</button>
                 <div class="feedback-container">
                     ${Object.entries(this.correctness).map(([option, correct]) => html`
